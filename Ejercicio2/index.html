@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJERCICIO 2 - EXAMEN</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <h1>PROGRAMACIÓN INTEGRATIVA DE COMPONENTES WEB</h1>
+
+  <h2>EJERCICIO 2 - EXAMEN</h2>
+
+  <!-- Incluir tus componentes -->
+  <emisor-component></emisor-component>
+  <receptor-component></receptor-component>
+
+  <!-- COMPONENTE EMISOR -->
+  <script src="emisor-component.js"></script>
+
+  <!-- COMPONENTE RECEPTOR -->
+  <script src="receptor-component.js"></script>
+
+  <script>
+    // Obtener instancias de los componentes
+    const emisor = document.querySelector('emisor-component');
+    const receptor = document.querySelector('receptor-component');
+
+    // Escuchar el evento 'actualizar-mensaje' en emisor y manejarlo en receptor
+    emisor.addEventListener('actualizar-mensaje', (evento) => {
+      receptor.actualizarMensaje(evento.detail.mensaje);
+    });
+  </script>
+
+</body>
+
+</html>
